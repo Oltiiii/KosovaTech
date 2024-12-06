@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <title>KosovaTech - Select the Watch of your Dreams</title>
+    <link rel="stylesheet" href="Final.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: linear-gradient(whitesmoke, white);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: whitesmoke ;
+        }
+        .selection-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            border: none;
+        }
+        .selection-wrapper img {
+            max-height: 750px;
+            border-radius: 30px;
+            margin-bottom: 50px;
+            border: none;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        select {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .card-button {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .card-button:hover {
+            background-color: #0056b3;
+        }
+        #selection-result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .selection-wrapper .iphone16 {
+            width: 50%;
+            outline: auto;
+        }
+        .storage-selection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .storage-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .storage-card:hover {
+            transform: translateY(-10px);
+        }
+        .storage-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .storage-card h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        .storage-card p {
+            font-size: 16px;
+            color: #6e6e73;
+        }
+        .storage-card .price {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+        .storage-card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0071e3;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .storage-card .btn:hover {
+            background-color: #005bb5;
+        }
+        @media (max-width: 768px) {
+            .storage-selection {
+                flex-direction: column;
+                align-items: center;
+            }
+            .storage-card {
+                width: 90%;
+                margin: 16px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .storage-card h2 {
+                font-size: 20px;
+            }
+            .storage-card p {
+                font-size: 14px;
+            }
+            .storage-card .price {
+                font-size: 18px;
+            }
+            .storage-card .btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+        .slideshow-container {
+               position: relative;
+               max-width: 1100px; 
+               margin: auto;
+               overflow: hidden;
+               border: 2px solid #ddd; 
+               border-radius: 10px; 
+        }
+
+        .slide {
+               display: none; 
+        }
+
+        .slide img {
+              width: 100%; 
+              border-radius: 10px; 
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Watch's Band and Color</h1>
+        <div class="selection-wrapper">
+            <div id="selection-result"></div>
+        </div>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="ultrablack.jpg" alt="Image 1">
+            </div>
+            <div class="slide fade">
+                <img src="titaniummilanese.jpg" alt="Image 2">
+            </div>
+            <div class="slide fade">
+                <img src="ultraband.jpg" alt="Image 3">
+            </div>
+            <div class="slide fade">
+                <img src="ultranatural.jpg" alt="Image 4">
+            </div>
+        </div>
+            <label for="color-options">Choose Color and Band:</label>
+            <select id="color-options">
+                <option value="Black with Titanium Milanese">Black with Titanium Milanese</option>
+                <option value="Silver with Titanium Milanese">Silver with Titanium Milanese</option>
+                <option value="Alpine Loop Band">Alpine Loop Band</option>
+                <option value="Ocean Band">Ocean Band</option>
+            </select>
+            <button id="submit-button" class="card-button material-icons">arrow_forward</button>
+        </div>
+        
+       
+
+    <div class="container">
+        <div class="title">
+         <h1>
+          Select Storage Capacity
+         </h1>
+        </div>
+        <div class="storage-selection">
+         <div class="storage-card">
+          <h2>
+            Small
+            Band fits 130-160mm wrists.
+          </h2>
+          <p class="price">
+           +$0
+          </p>
+          <a class="btn" href="#">
+           Select
+          </a>
+         </div>
+         <div class="storage-card">
+          <h2>
+            Medium
+            Band fits 155-185mm wrists.     
+        </h2>
+          <p class="price">
+           +$0
+          </p>
+          <a class="btn" href="#">
+           Select
+          </a>
+         </div>
+         <div class="storage-card">
+          <h2>
+            Large 
+            Band fits 180-210mm wrists.
+          </h2>
+          <p class="price">
+           +$50
+          </p>
+          <a class="btn" href="#">
+           Select
+          </a>
+         </div>
+         <div class="storage-card">
+          <h2>
+           Extra Large
+           Band fits 205-240mm wrists.
+          </h2>
+          <p class="price">
+           +$50
+          </p>
+          <a class="btn" href="#">
+           Select
+          </a>
+         </div>
+        </div>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function() {
+            const selectedColor = document.getElementById('color-options').value;
+            document.getElementById('selection-result').innerText = `You have selected your Apple Watch with ${selectedColor} specifications.`;
+        });
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 } 
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); 
+}
+    </script>
+</body>
+</html>

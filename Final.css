@@ -30,7 +30,6 @@ label.logo {
     padding: 0 100px;
     font-weight: bold;
 }
-
 nav ul {
     float: right;
     margin-right: 20px;
@@ -143,7 +142,7 @@ a.active, a:hover {
 
 .card-wrapper .swiper-slide-button {
     position: absolute;
-    top: 22%;
+    top: 20%;
 }
 
 .box-about-us {
@@ -207,26 +206,12 @@ a.active, a:hover {
     color: #777;
     margin: 0 15px 15px;
 }
-.team-member .social-icons {
-    padding: 15px;
-    background: #f4f4f4;
-    display: flex;
-    justify-content: center;
-}
-.team-member .social-icons a {
-    color: #333;
-    margin: 0 10px;
-    font-size: 1.2em;
-    transition: color 0.3s;
-}
-.team-member .social-icons a:hover {
-    color: #007BFF;
-}
+
 html {
     scroll-behavior: smooth;
 }
 
 footer {
-    color: #d01b1b;
+    color: #0a158e;
 }
     
