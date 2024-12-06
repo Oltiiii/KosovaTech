@@ -30,10 +30,10 @@
             margin-top: 20px;
         }
         .selection-wrapper img {
-            width: auto; 
-            height: auto;
+            height: 300px;
             border-radius: 20px;
             margin-bottom: 50px;
+            border: none;
         }
         label {
             margin-bottom: 10px;
@@ -139,49 +139,49 @@
         }
         .slideshow-container {
                position: relative;
-               max-width: 1100px; 
+               max-width: 1100px; /* me ndryshu width sa na duhet */
                margin: auto;
                overflow: hidden;
-               border: 2px solid #ddd; 
+               border: 2px solid #ddd; /* Opsional border */
                border-radius: 10px; 
         }
 
         .slide {
-               display: none; 
+               display: none; /* i fsheh te gjitha slides by default */
         }
 
         .slide img {
-              width: 100%; 
-              border-radius: 10px; 
+              width: 100%; /* i bon fotot responsive */
+              border-radius: 10px; /* opsional osht nese don anet me trrumbullakta */
       }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Select iPhone 16 Pro Max Color</h1>
+        <h1>Select iPhone 16 Pro Color</h1>
         <div class="selection-wrapper">
             <div id="selection-result"></div>
         </div>
         <div class="slideshow-container">
             <div class="slide fade">
-                <img src="iphone16promaxblack.webp" alt="Image 1">
+                <img src="iphone16Pro.webp" alt="Image 1">
             </div>
             <div class="slide fade">
-                <img src="iphone16promaxwhite.webp" alt="Image 2">
+                <img src="iphone16problack.webp" alt="Image 2">
             </div>
             <div class="slide fade">
-                <img src="iphone16promaxnatural.webp" alt="Image 3">
+                <img src="iphone16prodesert.webp" alt="Image 3">
             </div>
             <div class="slide fade">
-                <img src="iphone16promaxdesert.webp" alt="Image 4">
+                <img src="iphone16pronatural.webp" alt="Image 4">
             </div>
         </div>
             <label for="color-options">Choose Color:</label>
             <select id="color-options">
-                <option value="Black Titanium">Black Titanium</option>
                 <option value="White Titanium">White Titanium</option>
-                <option value="Natural Titanium">Natural Titanium</option>
+                <option value="BLack Titanium">Black Titanium</option>
                 <option value="Desert Titanium">Desert Titanium</option>
+                <option value="Natural Titanium">Natural Titanium</option>
             </select>
             <button id="submit-button" class="card-button material-icons">arrow_forward</button>
         </div>
@@ -195,7 +195,7 @@
          </h1>
         </div>
         <div class="storage-selection">
-         <div class="storage-card">
+         <div class="storage-card" onclick="selectedStorage('128GB')"> 
           <h2>
            128GB
           </h2>
@@ -245,7 +245,7 @@
     <script>
         document.getElementById('submit-button').addEventListener('click', function() {
             const selectedColor = document.getElementById('color-options').value;
-            document.getElementById('selection-result').innerText = `You have selected the iPhone 16 Pro Max with ${selectedColor} color.`;
+            document.getElementById('selection-result').innerText = `You have selected the iPhone 16 Pro with ${selectedColor} color.`;
         });
         let slideIndex = 0;
 showSlides();
@@ -253,12 +253,12 @@ showSlides();
 function showSlides() {
     let slides = document.getElementsByClassName("slide");
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
+        slides[i].style.display = "none"; // Fsheh te gjitha slides
     }
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 } 
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000); 
+    if (slideIndex > slides.length) { slideIndex = 1 } // Kthen te slide i pare
+    slides[slideIndex - 1].style.display = "block"; // Tregon slide e tanishem
+    setTimeout(showSlides, 3000); // Ndrron slide qdo 3 sekonda
 }
     </script>
 </body>

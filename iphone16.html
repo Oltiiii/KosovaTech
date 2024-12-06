@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <title>KosovaTech - Select iPhone 16 Storage</title>
+    <title>KosovaTech - Select iPhone of your Dreams</title>
     <link rel="stylesheet" href="Final.css">
     <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            background-color: whitesmoke;
         }
         body {
             background-image: linear-gradient(whitesmoke, white);
@@ -21,21 +20,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
             background-color: whitesmoke ;
-            
         }
         .selection-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
+            border: none;
         }
         .selection-wrapper img {
-            width: 800px; 
-            border-radius: 10px;
-            margin-bottom: 10px;
-
+            max-height: 750px;
+            border-radius: 30px;
+            margin-bottom: 50px;
+            border: none;
         }
         label {
             margin-bottom: 10px;
@@ -139,25 +138,56 @@
                 font-size: 14px;
             }
         }
+        .slideshow-container {
+               position: relative;
+               max-width: 1100px; 
+               margin: auto;
+               overflow: hidden;
+               border: 2px solid #ddd; 
+               border-radius: 10px; 
+        }
+
+        .slide {
+               display: none; 
+        }
+
+        .slide img {
+              width: 100%; 
+              border-radius: 10px; 
+      }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Select iPhone 16 Storage</h1>
+        <h1>Select iPhone 16 Color</h1>
         <div class="selection-wrapper">
-            <img src="iphone16.webp" alt="iPhone 16" class="iphone16">
-            <label for="storage-options">Choose storage capacity:</label>
-            <select id="storage-options">
-                <option value="64">64 GB</option>
-                <option value="128">128 GB</option>
-                <option value="256">256 GB</option>
-                <option value="512">512 GB</option>
+            <div id="selection-result"></div>
+        </div>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="iphone16.webp" alt="Image 1">
+            </div>
+            <div class="slide fade">
+                <img src="iphone16ultramarine.webp" alt="Image 2">
+            </div>
+            <div class="slide fade">
+                <img src="iphone16pink.webp" alt="Image 3">
+            </div>
+            <div class="slide fade">
+                <img src="iphone16black.webp" alt="Image 4">
+            </div>
+        </div>
+            <label for="color-options">Choose Color:</label>
+            <select id="color-options">
+                <option value="Black">Black</option>
+                <option value="Pink">Pink</option>
+                <option value="Ultra Marine">Ultra Marine</option>
+                <option value="Teal">Teal</option>
             </select>
             <button id="submit-button" class="card-button material-icons">arrow_forward</button>
         </div>
         
-        <div id="selection-result"></div>
-    </div>
+       
 
     <div class="container">
         <div class="title">
@@ -214,9 +244,22 @@
 
     <script>
         document.getElementById('submit-button').addEventListener('click', function() {
-            const selectedStorage = document.getElementById('storage-options').value;
-            document.getElementById('selection-result').innerText = `You have selected the iPhone 16 with ${selectedStorage} GB storage.`;
+            const selectedColor = document.getElementById('color-options').value;
+            document.getElementById('selection-result').innerText = `You have selected the iPhone 16 with ${selectedColor} color.`;
         });
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 } 
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); 
+}
     </script>
 </body>
 </html>
